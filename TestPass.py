@@ -23,11 +23,13 @@ def PassTest(p):
         print("Use Digits And Special Characters in your password")
     else:
         print("Password is Unbreakable!")
+
 def GenPass():
     randomString = strgen.StringGenerator("[\d]{4}&[A-Za-z]{5}&[\p]{3}").render()
     print("Here is a Strong Password:", randomString)
-ch = input("Do you want to Test or Generate Password?(T/G)\n> ")
-if ch == "T" or ch == "t":
+
+ch = input("Do you want to Test or Generate Password?(T/G)\n> ").lower()
+if ch == "t":
     PassTest(input("Enter Your Password\n> "))
-elif ch == "G" or ch == "g":
+elif ch == "g":
     GenPass()
